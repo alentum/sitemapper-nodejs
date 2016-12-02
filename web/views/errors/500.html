@@ -1,0 +1,17 @@
+{% extends '../layouts/usual-layout.html' %}
+
+{% set title = 'Server Error' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <pre>
+        {{message}}
+    </pre>
+
+    {% if error.status || error.stack %}
+    <pre>
+        {{error.status}}<br />
+        {{error.stack}}
+    </pre>>
+    {% endif %}
+{% endblock %}

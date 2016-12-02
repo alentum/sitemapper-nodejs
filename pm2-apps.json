@@ -1,0 +1,24 @@
+{
+  "apps" : [{
+    "name"        : "web",
+    "script"      : "web",
+    "exec_mode"   : "cluster",
+    "instances"   : 0,
+    "watch"       : false,
+    "env": {
+      "NODE_ENV"  : "production"
+    },
+    "post_update" : ["echo Web has been updated, running gulp build...",
+      "gulp build",
+      "echo Web is being restarted now"]
+  }, {
+    "name"        : "worker",
+    "script"      : "worker",
+    "exec_mode"   : "cluster",
+    "instances"   : 0,
+    "watch"       : false,
+    "env": {
+      "NODE_ENV"  : "production"
+    }
+  }]
+}

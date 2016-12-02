@@ -1,0 +1,20 @@
+{% extends '../layouts/usual-layout.html' %}
+
+{% set title = 'Crawler' %}
+
+{% block content %}
+  <h2>Visual Site Mapper Crawler</h2>
+
+  <p>Visual Site Mapper is a service that shows maps of sites by crawling site pages. Users of our service can request a map of any site.</p>
+
+  <p> If you wish to disallow the Visual Site Mapper crawler to index all or some pages on your site,
+    you can do it by adding rules to disallow access to these pages for crawler VSMCrawler to the robots.txt file.</p>
+
+  <p> For example:</p>
+  <p class="code">
+    User-Agent: VSMCrawler<br />
+    Disallow: /
+  </p>
+{% endblock %}
+
+

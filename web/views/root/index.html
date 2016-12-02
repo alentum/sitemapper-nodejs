@@ -1,0 +1,46 @@
+{% extends '../layouts/usual-layout.html' %}
+
+{% set title = 'Create a visual map of your site' %}
+{% set doNotShowTopSearch = true %}
+
+{% block scripts %}
+  <script>
+    $(function () {
+      $("#addressEdit").focus();
+      setValidationForAddressEdit("addressEdit");
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="center address-form-wrapper">
+    <form action="/" class="form-inline well address-form" method="post">
+      <label for="domainEdit" class="control-label">Site address:</label>
+      <input  type="text" class="form-control address-edit" id="domainEdit" name="domain" placeholder="www.mysite.com">
+      <button type="submit" class="btn btn-primary">Get Map</button>
+    </form>
+
+    <div class="sample-map-panel">
+      <p>Samples:</p>
+      <div class="sample-map-wrapper">
+        <a href="/map/www.alentum.com">
+          <img src="/images/map_alentum.png" class="sample-map" /><br />
+          www.alentum.com
+        </a>
+      </div>
+      <div class="sample-map-wrapper">
+        <a href="/map/www.weblogexpert.com">
+          <img src="/images/map_weblogexpert.png" class="sample-map" /><br />
+          www.weblogexpert.com
+        </a>
+      </div>
+    </div>
+
+    <div class="wle-link-panel">
+      Try our another product WebLog Expert:
+      <a href="https://www.weblogexpert.com/info/IISLogs.htm">IIS log analyzer</a>,
+      <a href="https://www.weblogexpert.com/info/ApacheLogs.htm">Apache log analyzer</a> and
+      <a href="https://www.weblogexpert.com/info/NginxLogs.htm">Nginx log analyzer</a>
+    </div>
+  </div>
+{% endblock %}

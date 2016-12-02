@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>Visual Site Mapper - {{title}}</title>
+    <meta name="description" content="{{description | default('Visual Site Mapper is a free service that can quickly show an interactive visual map of your site.')}}" />
+
+    <!-- CSS Files -->
+    {% for file in bundles.css.default %}
+        <link rel="stylesheet" type="text/css" href="{{file}}">
+    {% endfor %}
+
+    {% block styles %}{% endblock %}
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-77181-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">Visual Site Mapper</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+
+            <!-- Domain search -->
+            {% if doNotShowTopSearch !== true %}
+            <form action="/" class="navbar-form navbar-right" method="post">
+                <input type="text" id="topAddressEdit" name="domain" class="form-control top-address-edit"
+                       placeholder="www.mysite.com">
+                <button type="submit" class="btn btn-default">Get Map</button>
+            </form>
+            {% endif %}
+
+            <!-- History -->
+            <div class="nav pull-right">
+                <div class="btn-group navbar-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        History <span class="caret"></span>
+                    </button>
+                    {% if doNotShowTopSearch !== true %}
+                    <ul class="dropdown-menu" role="menu" id="domainHistory"></ul>
+                    {% else %}
+                    <ul class="dropdown-menu dropdown-menu-respalign" role="menu" id="domainHistory"></ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block body %}{% endblock %}
+
+<footer>
+    <hr/>
+    <div class="container">
+        &copy; {{ now() | date('Y') }} <a href="https://www.alentum.com/">Alentum Software Ltd.</a>
+        <span class="pull-right">
+            {% block footer-links %}
+                Web log analytics by <a href="https://www.weblogexpert.com/">WebLog Expert</a>
+            {% endblock %}
+        </span>
+    </div>
+</footer>
+
+<!-- JavaScript Files-->
+{% for file in bundles.js.default %}
+    <script type="text/javascript" src="{{file}}"></script>
+{% endfor %}
+
+<script>
+    $(function () {
+        setValidationForAddressEdit('topAddressEdit', true);
+        updateDomainHistory('{{domain}}');
+    });
+</script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "siteDatabase": {
+    "uri": "mongodb://localhost/sitemapper",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "exceptionLogPath": "logs/exception.log",
+  "web": {
+    "port": 3000,
+    "startWorker": false,
+    "logPath": "logs/web/app.log",
+    "accessLogPath": "logs/web/access/",
+    "assetsVersion": 1,
+    "bundles": {
+      "js": {
+        "default": [
+          "wle_tracker.js",
+          "components/jquery/dist/jquery.js",
+          "components/bootstrap/dist/js/bootstrap.js",
+          "components/js-cookie/src/js.cookie.js",
+          "js/main.js"
+        ],
+        "map": [
+          "components/d3/d3.min.js",
+          "libs/tipsy/jquery.tipsy.js",
+          "components/seedrandom/seedrandom.js",
+          "js/map.js"
+        ]
+      },
+      "css": {
+        "default": [
+          "components/bootstrap/dist/css/bootstrap.css",
+          "css/non-responsive.css",
+          "css/site.css"
+        ],
+        "map": [
+          "libs/tipsy/tipsy.css"
+        ]
+      }
+    }
+  },
+  "worker": {
+    "logPath": "logs/worker/app.log"
+  },
+  "mapper": {
+    "refreshPeriodInDays": 7,
+    "maxNodesToShow": 200
+  }
+}

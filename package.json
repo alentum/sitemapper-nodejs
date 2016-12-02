@@ -1,0 +1,52 @@
+{
+  "name": "site-mapper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/site-mapper"
+  },
+  "author": "Alentum Software Ltd.",
+  "license": "AGPLv3",
+  "dependencies": {
+    "async": "^1.4.2",
+    "bluebird": "^2.10.2",
+    "body-parser": "~1.13.2",
+    "charset": "^1.0.0",
+    "cheerio": "^0.19.0",
+    "compression": "^1.6.0",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "del": "^2.0.2",
+    "express": "~4.13.1",
+    "file-stream-rotator": "0.0.6",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.1",
+    "iconv-lite": "^0.4.13",
+    "jschardet": "^1.3.0",
+    "less-middleware": "1.0.x",
+    "lodash": "^3.10.1",
+    "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "mongoose": "^4.1.8",
+    "morgan": "^1.6.1",
+    "nconf": "^0.8.0",
+    "request": "^2.62.0",
+    "requestretry": "^1.5.0",
+    "robots": "^0.9.4",
+    "run-sequence": "^1.1.4",
+    "serve-favicon": "~2.3.0",
+    "swig": "^1.4.2",
+    "url": "^0.11.0",
+    "validator": "^4.0.6",
+    "winston": "^1.0.2"
+  }
+}

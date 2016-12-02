@@ -1,0 +1,82 @@
+{% extends '../layouts/layout.html' %}
+
+{% set title = domain %}
+{% set description = 'View a visual site map of ' + domain + ' at Visual Site Mapper - free service that can quickly show an interactive map of your site.' %}
+
+{% block styles %}
+    <style>
+        .link {
+            stroke: #CCCCCC;
+        }
+
+        .node {
+            stroke: #808080;
+            stroke-width: 0.5px;
+        }
+
+        .node text {
+            stroke-width: 0px;
+            pointer-events: none;
+            font-size: 10px;
+        }
+    </style>
+
+    {% for file in bundles.css.map %}
+        <link rel="stylesheet" type="text/css" href="{{file}}">
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="title-container">
+            <div class="map-options-div">
+                Highlight links:
+                <div class="btn-group btn-group-xs" data-toggle="buttons" id="linkHighlightOptions">
+                    <label class="btn btn-default" id="highlightAllLabel">
+                        <input type="radio" name="linkHighlightMode"> All
+                    </label>
+                    <label class="btn btn-default" id="highlightOutgoingLabel">
+                        <input type="radio" name="linkHighlightMode"> Outgoing
+                    </label>
+                    <label class="btn btn-default" id="highlightIncomingLabel">
+                        <input type="radio" name="linkHighlightMode"> Incoming
+                    </label>
+                </div>
+            </div>
+            <div class="map-title-div">
+                <h2>{{domain}}</h2>
+            </div>
+            <div class="map-status-div">
+                <h5>
+                    <img src="/images/progress.gif" class="progress-image" id="progress" />
+                    <span id="statusText" class="map-status-text">Status</span>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <div id="siteMapBox" class="site-map-box">
+        <div id="siteMapLoading" class="site-map-loading">Loading...</div>
+
+        <svg id="siteMap" class="site-map" style="display: none">
+        </svg>
+    </div>
+{% endblock %}
+
+{% block footer-links %}
+<a href="https://www.weblogexpert.com/info/IISLogs.htm">IIS log analyzer</a> -
+<a href="https://www.weblogexpert.com/info/ApacheLogs.htm">Apache log analyzer</a> -
+<a href="https://www.weblogexpert.com/info/NginxLogs.htm">Nginx log analyzer</a>
+{% endblock %}
+
+{% block scripts %}
+    {% for file in bundles.js.map %}
+        <script type="text/javascript" src="{{file}}"></script>
+    {% endfor %}
+
+    <script>
+        $(function () {
+            initSiteMap('/mapdata/{{domain}}');
+        });
+    </script>
+{% endblock %}

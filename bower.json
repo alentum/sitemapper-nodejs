@@ -1,0 +1,25 @@
+{
+  "name": "site-mapper",
+  "version": "0.0.0",
+  "authors": [
+    "Alentum Software Ltd."
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "AGPLv3",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "^3.3.5",
+    "js-cookie": "~2.0.3"
+  }
+}

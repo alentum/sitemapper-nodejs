@@ -1,0 +1,196 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Added for Site Mapper */
+.body-content {
+    min-height: 500px;
+}
+
+.center {
+    text-align: center;
+}
+
+.address-form-wrapper {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    min-width: 500px;
+}
+
+.address-form {
+    width: 600px;
+    display: inline-block;
+}
+
+.address-form .control-label {
+    margin-right: 5px;
+}
+
+.address-form .form-control {
+    vertical-align: middle !important;
+}
+
+.address-form .address-edit {
+    width: 100%;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+}
+
+.navbar-form .control-label {
+    margin-right: 5px;
+}
+
+.navbar-form {
+    padding-right: 0;
+}
+
+.navbar-collapse {
+    padding-right: 0;
+}
+
+.top-address-edit {
+    width: 200px;
+}
+
+.map-status-div h5 {
+    margin-bottom: 5px;
+}
+
+.progress-image {
+    width: 32px;
+    height: 11px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    display: none;
+}
+
+.title-container {
+    position: relative;
+}
+
+.map-options-div {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.map-status-text {
+    visibility: hidden;
+}
+
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+    text-decoration: none;
+    cursor: default;
+}
+
+@media (max-width: 1300px) {
+    .dropdown-menu-respalign {
+        left: auto;
+        right: 0px;
+    }
+    .dropdown-menu-respalign::before {
+        left: auto !important;
+        right: 9px;
+    }
+    .dropdown-menu-respalign::after {
+        left: auto !important;
+        right: 10px;
+    }
+}
+
+.site-table {
+    border-bottom: 1px solid #dddddd;
+}
+
+.code {  
+    font-family: monospace;
+}
+
+.sample-map {
+    border: 1px solid #dddddd;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 270px;
+    height: 197px;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+.sample-map-panel {
+    margin-top: 20px;
+}
+
+.sample-map-wrapper {
+    display: inline-block;
+}
+
+.wle-link-panel {
+    margin-top: 50px;
+}
+
+/* Map */
+.site-map-box {
+    height: 630px;
+    width: 1000px;
+    margin: 0px auto 0px auto;
+}
+
+.site-map {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.site-map-loading {
+    margin: 0 auto;
+    width: 1000px;
+    height: 600px;
+    display: table-cell;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}

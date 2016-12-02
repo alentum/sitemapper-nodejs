@@ -1,0 +1,12 @@
+{
+  "exceptionLogPath": "../logs/site-mapper/exception.log",
+  "web": {
+    "port": 8080,
+    "startWorker": false,
+    "logPath": "../logs/site-mapper/web/app.log",
+    "accessLogPath": "../logs/site-mapper/web/access/"
+  },
+  "worker": {
+    "logPath": "../logs/site-mapper/worker/app.log"
+  }
+}
